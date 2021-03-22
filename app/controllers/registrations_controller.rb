@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-
+  
   private
 
   def signed_up_params

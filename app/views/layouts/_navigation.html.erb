@@ -1,0 +1,31 @@
+      <header class="navbar navbar-fixed-top saved-blue">
+      <nav class="navbar-brand container-fluid">
+            <div class="nav-item">
+            <%= link_to "TweetHub", root_path, :class => 'brand' %>
+            </div>
+
+          <ul class="nav nav-item">
+            <% if user_signed_in? %>
+              <li class="nav-link">
+                <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+              </li>       
+            <% else %>
+              <li class="nav-link">
+                <%= link_to('Login', new_user_session_path)  %>  
+              </li>
+            <% end %>
+            <% if user_signed_in? %>
+              <li class="nav-link">
+                <%= link_to('Edit account', edit_user_registration_path) %>
+              </li>
+            <% else %>
+              <li class="nav-link">
+                <%= link_to('Sign up', new_user_registration_path)  %>
+              </li>
+            <% end %>
+          </ul>
+          </div>
+
+        </div>
+      </nav>
+    </header>
