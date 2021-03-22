@@ -6,12 +6,17 @@
       <div class="navbar-brand">
         <%= link_to "TweetHub", root_path, :class => 'brand' %>
       </div>
-
-      <%# <form class="navbar-search pull-right">
-      <input type="text" class="search-query" placeholder="Search">
-      </form> %>
-
+      
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form class="navbar-form role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </li>
+
         <% if user_signed_in? %>
           <li class="nav-link">
             <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
@@ -31,6 +36,7 @@
               </li>
             <% end %>
           </ul>
+          </div>
     </div>
   </div>
 </div>
