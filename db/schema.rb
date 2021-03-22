@@ -21,12 +21,18 @@ ActiveRecord::Schema.define(version: 2021_03_22_162840) do
   end
 
   create_table "opinions", force: :cascade do |t|
+    t.bigint "user_id"
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_opinions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "username", default: "", null: false
+    t.string "fullname", default: "", null: false
+    t.string "photo", default: "", null: false
+    t.string "coverimage", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
