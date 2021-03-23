@@ -6,12 +6,13 @@
       </div>
     </div>
 
-    <li>
-DISPLAY ALL TWEETS
-      <!--<%# <span class="profile-link">
-        <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-      </span>-->
-    </li>
+    <h3>See @<%= @user.username %> thoughts:</h3><br>
 
+  <ul>
+    <% @user_opinions.each do | opinion | %>
+      <li><%= opinion.body %> <br> 
+      <small>Tweeted at <%= opinion.created_at %></small></li><br>
+    <% end %>
+  </ul>
   </div>
 </div>
