@@ -1,56 +1,30 @@
 
-    <!-- Sidebar -->
-        <div class="row">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <p>PROFILE</p>
-            </div>
-          </div>
-        </div>
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h3><%= link_to 'Profile', users_show_path(current_user) %></h3><br>
+      <strong>@<%= current_user.username %><br/></strong>
+      <%= current_user.email %><br/>
+    </div>
+  </div>
+</div>
     
-    <nav class="container-fluid">
-        <div class="sidebar-header">
-            <h3>Profile</h3>
-        </div>
+<nav class="container-fluid">
+  <div class="sidebar-header">
 
-        <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
+  </div>
+
+  <br>
+
+  <ul class="list-unstyled components">
+    <li>
+    <%= link_to 'Home', root_path %>
+    </li>
+    <li>
+      <%# <%= link_to 'All Posts', users_show_path(user) %>
+    </li>
+    <li>
+      <a href="#">All Tweets</a>
+    </li>
+  </ul>
+</nav>
