@@ -14,9 +14,28 @@
  *= require_self
  */
 
+ body {
+   margin: 0;
+   padding: 0;
+ }
+
  .saved-blue {
    background-color: #52a6e7;
    color: #fff;
+ }
+
+ .sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: stretch;
+  background-color: #213346;
+  min-width: 250px;
+  max-width: 250px;
+  color: #fff;
+   a {
+     color: #fff;
+   }
  }
 
  .content {
