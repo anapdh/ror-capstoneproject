@@ -16,30 +16,33 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <body>
+
   <%= render 'layouts/navigation' %>
 
-  <body class="container-fluid">
-    <div class="row-fluid">
-      <div class="span12">
+    <div class="container">
+      <div class="row">
 
-        <div class="row-fluid">
-          <div class="span2">
-          <%= render 'layouts/sidebar' %>
+          <div class="col-xs-3">
+            <%= render 'layouts/sidebar' %>
+          </div>
+
+          <div class="col-xs-6">
+            <%= yield %>
+          </div>
+          
+          <div class="col-xs-3">
+            <p>lalalala</p>
           </div>
         </div>
+      </div>
+      
 
-          <div class="row-fluid">
-            <div class="span10 container">
-              <div class="content">
-                <%= render 'layouts/messages' %>
-                <%= yield %>
-              </div>
-            </div>
-          </div>
-        </div>
+    
+
+ 
+    
     </div>
-
-  
 
 
 
