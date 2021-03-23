@@ -1,28 +1,19 @@
 <h1>Opinions</h1><br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Say something:</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h4>Say something:</h4><br>
 
-  <tbody>
-    <% @opinions.each do | opinions | %>
-      <tr>
-        <td><%= opinions.user.fullname %> <small>@<%= opinions.user.username %></small></td>
-        <td><%= opinions.created_at.strftime("#{opinions.created_at.day.ordinalize} %b %Y") %></td>
-        <td><%= opinions.body %></td>
-      <% if user_signed_in? && current_user.id == opinions.user_id %>
-        <td><%= link_to 'Show', opinions %></td>
-        <td><%= link_to 'Edit', edit_opinion_path(opinions) %></td>
-        <td><%= link_to 'Destroy', opinions, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  <% end %>
-  </tbody>
-</table>
+    <ul class="list-unstyled">
+      <% @opinions.each do | opinions | %>
+          <li class="panel panel-default"><%= opinions.user.fullname %> <small>@<%= opinions.user.username %></small>
+          <%= opinions.created_at.strftime("#{opinions.created_at.day.ordinalize} %b %Y") %>
+          <%= opinions.body %>
+        <% if user_signed_in? && current_user.id == opinions.user_id %>
+          <%= link_to 'Show', opinions %>
+          <%= link_to 'Edit', edit_opinion_path(opinions) %>
+          <%= link_to 'Destroy', opinions, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <% end %>
+      <% end %>
+    </ul>
 
 <br>
 
