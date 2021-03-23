@@ -9,17 +9,23 @@
   </thead>
 
   <tbody>
-    <% @opinions.each do |opinion| %>
+    <% @opinions.each do | opinions | %>
       <tr>
-        <td><%= opinion.body %></td>
-        <td><%= link_to 'Show', opinion %></td>
-        <td><%= link_to 'Edit', edit_opinion_path(opinion) %></td>
-        <td><%= link_to 'Destroy', opinion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= opinions.user.fullname %> <small>@<%= opinions.user.username %></small></td>
+        <td><%= opinions.created_at.strftime("#{opinions.created_at.day.ordinalize} %B %Y") %></td>
+        <td><%= opinions.body %></td>
+      <% if user_signed_in? && current_user.id == opinions.user_id %>
+        <td><%= link_to 'Show', opinions %></td>
+        <td><%= link_to 'Edit', edit_opinion_path(opinions) %></td>
+        <td><%= link_to 'Destroy', opinions, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Opinion', new_opinion_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Opinion', new_opinion_path %>
+<% end %>
