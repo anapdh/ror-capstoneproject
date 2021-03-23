@@ -12,7 +12,7 @@
     <% @opinions.each do | opinions | %>
       <tr>
         <td><%= opinions.user.fullname %> <small>@<%= opinions.user.username %></small></td>
-        <td><%= opinions.created_at.strftime("#{opinions.created_at.day.ordinalize} %B %Y") %></td>
+        <td><%= opinions.created_at.strftime("#{opinions.created_at.day.ordinalize} %b %Y") %></td>
         <td><%= opinions.body %></td>
       <% if user_signed_in? && current_user.id == opinions.user_id %>
         <td><%= link_to 'Show', opinions %></td>
