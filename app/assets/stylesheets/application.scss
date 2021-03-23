@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ /*
+ *= require font-awesome
+ */
 
  body {
    margin: 0;
@@ -48,4 +51,17 @@
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+footer {
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px; 
+  li {
+    text-align: right;
+    padding: 10px;
+    color: pink;
+  }
 }

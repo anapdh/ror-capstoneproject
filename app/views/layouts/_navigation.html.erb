@@ -28,7 +28,9 @@
             <% end %>
         <% if user_signed_in? %>
           <li class="nav-link">
-            <%= link_to('Edit account', edit_user_registration_path) %>
+            <%= link_to edit_user_registration_path do %>
+              <i class="fa fa-cog"></i>
+            <% end %>
           </li>
             <% else %>
               <li class="nav-link">

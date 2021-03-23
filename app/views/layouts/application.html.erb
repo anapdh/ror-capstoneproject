@@ -20,8 +20,8 @@
 
   <%= render 'layouts/navigation' %>
 
-    <div class="container">
-      <div class="row">
+    <div class="container col-xs-12">
+      <div class="row d-flex justify-content-center">
 
         <div class="col-xs-3">
           <div class="panel panel-default">
@@ -50,13 +50,7 @@
         </div> <!-- end of ROW-->
       </div><!-- end of CONTAINER-->
       
+      <%= render 'layouts/footer' %>
 
-    <footer>
-      <nav class="navbar-inner">
-          <div class="container">
-            <%= render 'layouts/footer' %>
-          </div>
-        </nav>
-    </footer>
   </body>
 </html>

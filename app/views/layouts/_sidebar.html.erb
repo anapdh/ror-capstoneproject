@@ -1,21 +1,18 @@
 
+<% if user_signed_in? %>
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-body">
       <h3><%= link_to 'Profile', users_show_path(current_user) %></h3><br>
       <strong>@<%= current_user.username %><br/></strong>
-      <%= current_user.email %><br/>
+      <%= current_user.email %><br/><br>
+      <%= link_to 'Account Settings', edit_user_registration_path %>
     </div>
   </div>
 </div>
+<% end %>
     
-<nav class="container-fluid">
-  <div class="sidebar-header">
-
-  </div>
-
-  <br>
-
+<nav class="container-fluid"><br>
   <ul class="list-unstyled components">
     <li>
     <%= link_to 'Home', root_path %>
