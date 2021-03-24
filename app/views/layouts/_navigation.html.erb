@@ -1,48 +1,51 @@
 <header>
 
-<div class="navbar navbar-fixed-top saved-blue">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <div class="navbar-brand">
-        <%= link_to "TweetHub", root_path, :class => 'brand' %>
-      </div>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <form class="navbar-form role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-          </li>
+  <div class="main-nav">
 
-        <% if user_signed_in? %>
-          <li class="nav-link"><%= link_to current_user.username, users_show_path(current_user) %></li>
-          <li class="nav-link"><%= link_to 'New Opinion', new_opinion_path %></li>
-          <li class="nav-link">
-            <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
-          </li>       
-            <% else %>
-            <li class="nav-link">
-              <%= link_to('Login', new_user_session_path)  %>  
-            </li>
-            <% end %>
-        <% if user_signed_in? %>
-          <li class="nav-link">
-            <%= link_to edit_user_registration_path do %>
-              <i class="fa fa-cog"></i>
-            <% end %>
-          </li>
-            <% else %>
-              <li class="nav-link">
-                <%= link_to('Sign up', new_user_registration_path)  %>
-              </li>
-            <% end %>
-          </ul>
+    <div class="navbar navbar-static-top saved-blue">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="navbar-brand">
+            <%= link_to "TweetHub", root_path, :class => 'brand' %>
           </div>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-form role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+              </li>
+
+              <% if user_signed_in? %>
+                <li class="nav-link"><%= link_to current_user.username, users_show_path(current_user) %></li>
+                <li class="nav-link"><%= link_to 'New Opinion', new_opinion_path %></li>
+                <li class="nav-link">
+                  <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+                </li>       
+                  <% else %>
+                    <li class="nav-link">
+                      <%= link_to('Login', new_user_session_path) %>  
+                    </li>
+              <% end %>
+
+              <% if user_signed_in? %>
+                <li class="nav-link">
+                  <%= link_to edit_user_registration_path do %>
+                    <i class="fa fa-cog"></i>
+                  <% end %>
+                </li>
+                  <% else %>
+                    <li class="nav-link">
+                      <%= link_to('Sign up', new_user_registration_path)  %>
+                    </li>
+                  <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-        
+  </div>  
 </header>
