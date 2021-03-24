@@ -38,16 +38,16 @@
             </div>
           </div>
         </div>
-          
-        <div class="col-xs-3">
-          <div class="panel panel-default">
-            <div class="panel-body">
 
-            <%= define_page(@user) %>
-
+        <% if user_signed_in? %>
+          <div class="col-xs-3">
+            <div class="panel panel-default">
+              <div class="panel-body">
+              <%= define_page(@user) %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
 
         </div> <!-- end of ROW-->
       </div><!-- end of CONTAINER-->

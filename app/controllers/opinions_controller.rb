@@ -21,8 +21,8 @@ class OpinionsController < ApplicationController
 
   # POST /opinions or /opinions.json
   def create
-    @opinion = Opinion.new(opinion_params)
-    @opinion.user_id = current_user.id
+    @opinion = current_user.opinions.new(opinion_params)
+    #@opinion.user_id = current_user.id
 
     respond_to do |format|
       if @opinion.save
@@ -65,6 +65,6 @@ class OpinionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def opinion_params
-      params.require(:opinion).permit(:body)
+      params.permit(:user_id, :body)
     end
 end

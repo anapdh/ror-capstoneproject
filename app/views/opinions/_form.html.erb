@@ -1,22 +1,12 @@
-<%= form_with(model: opinion) do |form| %>
-  <% if opinion.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(opinion.errors.count, "error") %> prohibited this opinion from being saved:</h2>
-
-      <ul>
-        <% opinion.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with model: @opinion do |form| %>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.label :body, hidden: true %>
+    <%= form.text_area :body, :rows=>5, :cols=>50, placeholder: "What's on your mind?", required: true, autofocus: true, class: 'new-opinion-input' %>
+    <%= form.number_field :user_id, value: current_user.id, hidden: true %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
-  </div>
+  </div><br>
 <% end %>

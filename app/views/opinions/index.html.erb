@@ -2,6 +2,8 @@
 
   <h4>Say something:</h4><br>
 
+    <%= render 'opinions/form' %>
+
     <ul class="list-unstyled">
       <% @opinions.each do | opinions | %>
           <li class="panel panel-default"><%= opinions.user.fullname %> <small>@<%= opinions.user.username %></small>
