@@ -1,34 +1,40 @@
-<div class="container-fluid">
-  <% if user_signed_in? %>
-  
-    <div class="row">
+<div class="container-fluid d-flex flex-column h-100">
 
-          <h3><%= link_to 'Profile', users_show_path(current_user) %></h3><br>
+
+    <div class="profile">
+      <% if user_signed_in? %>
+        <%= link_to users_show_path(current_user) do | user | %>
+          <h3>Profile</h3>
           <strong>@<%= current_user.username %><br/></strong>
           <%= current_user.email %><br/><br>
-          <%= link_to 'Account Settings', edit_user_registration_path %>
+        <% end %>
+        <%= link_to 'Account Settings', edit_user_registration_path %>
+      <% end %>
+    </div><br><br>
 
+    
+
+      <h4>EXPLORE<h4>
+
+      <div class="explore">
+      <ul class="list-unstyled components">
+        <li>
+        <%= link_to 'Opinons', root_path %>
+        </li>
+        <li>
+          <%= link_to 'All Users', users_path %>
+        </li>
+      </ul>
+      </div><br>
+
+      <div class="ocult">
+      <ul class="list-unstyled components">
+        <% if user_signed_in? %>
+          <li class="nav-link"><%= link_to 'New Opinion', new_opinion_path %></li>
+          <li class="nav-link">
+          <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></li>       
+        <% end %>
+      </ul>
     </div>
-  <% end %>
 
-  <nav class="container-fluid"><br>
-    <ul class="list-unstyled components">
-      <li>
-      <%= link_to 'Home', root_path %>
-      </li>
-      <li>
-        <%# <%= link_to 'All Posts', users_show_path(user) %>
-      </li>
-      <li>
-        <a href="#">All Tweets</a>
-      </li>
-    </ul>
-  </nav>
-
-  <% if user_signed_in? %>
-    <li class="nav-link"><%= link_to current_user.username, users_show_path(current_user) %></li>
-    <li class="nav-link"><%= link_to 'New Opinion', new_opinion_path %></li>
-    <li class="nav-link">
-      <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></li>       
-  <% end %>
 </div>
