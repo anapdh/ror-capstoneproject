@@ -1,27 +1,34 @@
+<div class="container-fluid">
+  <% if user_signed_in? %>
+  
+    <div class="row">
 
-<% if user_signed_in? %>
-<div class="row">
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <h3><%= link_to 'Profile', users_show_path(current_user) %></h3><br>
-      <strong>@<%= current_user.username %><br/></strong>
-      <%= current_user.email %><br/><br>
-      <%= link_to 'Account Settings', edit_user_registration_path %>
+          <h3><%= link_to 'Profile', users_show_path(current_user) %></h3><br>
+          <strong>@<%= current_user.username %><br/></strong>
+          <%= current_user.email %><br/><br>
+          <%= link_to 'Account Settings', edit_user_registration_path %>
+
     </div>
-  </div>
+  <% end %>
+
+  <nav class="container-fluid"><br>
+    <ul class="list-unstyled components">
+      <li>
+      <%= link_to 'Home', root_path %>
+      </li>
+      <li>
+        <%# <%= link_to 'All Posts', users_show_path(user) %>
+      </li>
+      <li>
+        <a href="#">All Tweets</a>
+      </li>
+    </ul>
+  </nav>
+
+  <% if user_signed_in? %>
+    <li class="nav-link"><%= link_to current_user.username, users_show_path(current_user) %></li>
+    <li class="nav-link"><%= link_to 'New Opinion', new_opinion_path %></li>
+    <li class="nav-link">
+      <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></li>       
+  <% end %>
 </div>
-<% end %>
-    
-<nav class="container-fluid"><br>
-  <ul class="list-unstyled components">
-    <li>
-    <%= link_to 'Home', root_path %>
-    </li>
-    <li>
-      <%# <%= link_to 'All Posts', users_show_path(user) %>
-    </li>
-    <li>
-      <a href="#">All Tweets</a>
-    </li>
-  </ul>
-</nav>

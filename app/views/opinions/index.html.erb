@@ -1,8 +1,9 @@
 <h1>Opinions</h1><br>
 
-  <h4>Say something:</h4><br>
-
-    <%= render 'opinions/form' %>
+  <% if user_signed_in? %>
+    <h4>Say something:</h4><br>
+      <%= render 'opinions/form' %>
+  <% end %>
 
     <ul class="list-unstyled">
       <% @opinions.each do | opinions | %>

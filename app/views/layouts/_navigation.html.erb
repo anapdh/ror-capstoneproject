@@ -19,6 +19,7 @@
 
         <% if user_signed_in? %>
           <li class="nav-link"><%= link_to current_user.username, users_show_path(current_user) %></li>
+          <li class="nav-link"><%= link_to 'New Opinion', new_opinion_path %></li>
           <li class="nav-link">
             <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
           </li>       
