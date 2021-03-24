@@ -1,8 +1,8 @@
 module ApplicationHelper
-  def define_page(info, home)
-    if current_page?(users_show_path(:id))
+  def define_page(user = nil)
+    if user
       render 'users/user_info'
-    else
+    else 
       render 'users/who_to_follow'
     end
   end
