@@ -3,13 +3,14 @@
 
     <div class="profile">
       <% if user_signed_in? %>
-        <%= link_to users_show_path(current_user) do | user | %>
-          <h3>Profile</h3>
-          <strong>@<%= current_user.username %><br/></strong>
-          <%= current_user.email %><br/><br>
+        <image class="profile-picture" src="<%=(url_for(current_user.photo))%>"
+          <%= link_to users_show_path(current_user) do | user | %>
+            <h3>Profile</h3>
+            <strong>@<%= current_user.username %><br/></strong>
+            <%= current_user.email %><br/><br>
+          <% end %>
+          <%= link_to 'Account Settings', edit_user_registration_path %>
         <% end %>
-        <%= link_to 'Account Settings', edit_user_registration_path %>
-      <% end %>
     </div><br><br>
 
     

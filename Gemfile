@@ -30,6 +30,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'world-flags', github: 'kristianmandrup/world-flags', branch: 'master'
+gem "aws-sdk-s3", require: false
+gem 'image_processing'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

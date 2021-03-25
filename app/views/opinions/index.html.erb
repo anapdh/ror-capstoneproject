@@ -9,6 +9,7 @@
       <% @opinions.each do | opinions | %>
         <div class="panel panel-default">
           <li class="panel-heading">
+            <%# <%= image_tag opinions.user.photo.variant(resize_to_limit: [30, 30]) %>
             <%= opinions.user.fullname %>
             <small>@<%= opinions.user.username %></small>
             <small class="text-right"> | 

@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   has_many :opinions
   has_many :followers
+  has_one_attached :photo
+  has_one_attached :coverimage
 
   def self.find_for_database_authentication warden_condition
     conditions = warden_condition.dup
@@ -22,4 +24,10 @@ class User < ApplicationRecord
       { value: login.strip.downcase}]).first
   end
 
+  after_initialize :set_defaults
+
+  def set_defaults
+    self.photo ||= 'default-profile-img.png'
+    self.coverimage ||= 'default-cover-img.jpg'
+  end
 end
