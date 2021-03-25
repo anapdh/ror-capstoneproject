@@ -7,19 +7,20 @@
 
     <ul class="list-unstyled">
       <% @opinions.each do | opinions | %>
-          <li class="panel panel-default"><%= opinions.user.fullname %> <small>@<%= opinions.user.username %></small>
-          <%= opinions.created_at.strftime("#{opinions.created_at.day.ordinalize} %b %Y") %>
-          <%= opinions.body %>
-        <% if user_signed_in? && current_user.id == opinions.user_id %>
-          <%= link_to 'Show', opinions %>
-          <%= link_to 'Edit', edit_opinion_path(opinions) %>
-          <%= link_to 'Destroy', opinions, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-        <% end %>
+        <div class="panel panel-default">
+          <li class="panel-heading">
+            <%= opinions.user.fullname %>
+            <small>@<%= opinions.user.username %></small>
+            <small class="text-right"> | 
+            <%= opinions.created_at.strftime("#{opinions.created_at.day.ordinalize} %b %Y") %>
+            </small>
+          <li class="panel-body"><%= opinions.body %></li>
+            <% if user_signed_in? && current_user.id == opinions.user_id %>
+              <li class="panel-footer text-right h6"><%= link_to 'Show', opinions %>
+                <%= link_to 'Edit', edit_opinion_path(opinions) %>
+                <%= link_to 'Delete', opinions, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% end %>
+        </div>
       <% end %>
     </ul>
 
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Opinion', new_opinion_path %>
-<% end %>
