@@ -3,7 +3,13 @@
 
     <div class="profile">
       <% if user_signed_in? %>
-        <image class="profile-picture" src="<%=(url_for(current_user.photo))%>"
+
+          <div>
+            <% if @user.photo.attached? %>
+              <%= image_tag @user.photo %>
+            <% end %>
+          </div>
+
           <%= link_to users_show_path(current_user) do | user | %>
             <h3>Profile</h3>
             <strong>@<%= current_user.username %><br/></strong>
