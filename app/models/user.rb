@@ -8,9 +8,6 @@ class User < ApplicationRecord
 
   attr_accessor :login
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-
   has_many :opinions
   has_many :followers
   has_one_attached :photo
@@ -22,12 +19,5 @@ class User < ApplicationRecord
     where(conditions).where(
       ["lower(username) = :value OR lower(email) = :value",
       { value: login.strip.downcase}]).first
-  end
-
-  after_initialize :set_defaults
-
-  def set_defaults
-    self.photo ||= 'default-profile-img.png'
-    self.coverimage ||= 'default-cover-img.jpg'
   end
 end

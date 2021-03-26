@@ -5,9 +5,7 @@
       <% if user_signed_in? %>
 
           <div>
-            <% if @user.photo.attached? %>
-              <%= image_tag @user.photo %>
-            <% end %>
+            <%= image_tag display_photo %>
           </div>
 
           <%= link_to users_show_path(current_user) do | user | %>
