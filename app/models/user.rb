@@ -13,6 +13,15 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_one_attached :coverimage
 
+  has_many :followed_users, foreign_key: :follower_id, class_name: 'Following'
+  has_many :followees, through: :followed_users
+  has_many :following_users, foreign_key: :followee_id, class_name: 'Following'
+  has_many :followers, through: :following_users
+
+  validates :username, uniqueness: { case_sensitive: true }
+  validates :username, presence: true
+  validates :fullname, presence: true
+
   def self.find_for_database_authentication warden_condition
     conditions = warden_condition.dup
     login = conditions.delete(:login)

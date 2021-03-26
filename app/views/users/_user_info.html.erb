@@ -1,5 +1,15 @@
 <div class="">
-
-<image class="profile-picture"<%= image_tag display_photo %>
-
+  <image class="profile-picture"<%= image_tag display_photo %>
 </div>
+
+<section id="all-links">
+  <% if @user.id == current_user.id %>
+    <% elsif current_user.followees.include?(@user) %>
+      <h5><%= button_to "Unfollow", unfollow_path, method: "POST" %></h5>
+    <% else %>
+      <h5><%= button_to "Follow", follow_path, method: "POST"  %></h5>
+    <% end%>
+    <%# <%= link_to 'Followers', user_followers_path(@user) %>
+    <%# <%= link_to 'Following', user_followees_path(@user) %>
+  <br>
+</section>
