@@ -5,7 +5,7 @@
       <% if user_signed_in? %>
 
           <div>
-            <%= image_tag display_photo %>
+            <image class="profile-picture"<%= image_tag display_photo %>
           </div>
 
           <%= link_to users_show_path(current_user) do | user | %>
