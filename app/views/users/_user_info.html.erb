@@ -2,6 +2,11 @@
   <image class="profile-picture"<%= image_tag display_photo %>
 </div>
 
+<div>
+  <span> Following <%= @user.followees.count %></span>
+  <span> Followers <%= @user.followers.count %></span>
+</div>
+
 <section id="all-links">
   <% if @user.id == current_user.id %>
     <% elsif current_user.followees.include?(@user) %>

@@ -5,6 +5,7 @@ class OpinionsController < ApplicationController
   # GET /opinions or /opinions.json
   def index
     @opinions = Opinion.all.order(created_at: :desc)
+    @opinion = Opinion.new
   end
 
   # GET /opinions/1 or /opinions/1.json
@@ -22,7 +23,7 @@ class OpinionsController < ApplicationController
 
   # POST /opinions or /opinions.json
   def create
-    @opinion = current_user.opinions.new(opinion_params)
+    @opinion = current_user.opinions.build(opinion_params)
 
     respond_to do |format|
       if @opinion.save
@@ -65,6 +66,6 @@ class OpinionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def opinion_params
-      params.permit(:user_id, :body)
+      params.require(:opinion).permit(:body)
     end
 end
