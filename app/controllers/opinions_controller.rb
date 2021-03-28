@@ -6,6 +6,7 @@ class OpinionsController < ApplicationController
   def index
     @opinions = Opinion.all.order(created_at: :desc)
     @opinion = Opinion.new
+    @users = User.all
   end
 
   # GET /opinions/1 or /opinions/1.json
@@ -14,7 +15,6 @@ class OpinionsController < ApplicationController
 
   # GET /opinions/new
   def new
-    @opinion = Opinion.new
   end
 
   # GET /opinions/1/edit

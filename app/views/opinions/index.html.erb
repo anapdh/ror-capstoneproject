@@ -6,22 +6,22 @@
   <% end %>
 
     <ul class="list-unstyled">
-      <% @opinions.each do | opinions | %>
+      <% @opinions.each do | opinion | %>
         <div class="panel panel-default">
           <li class="panel-heading">
-            <image class="profile-picture4"<%= image_tag opinions.user.photo %>
-            <%= opinions.user.fullname %>
-            <small>@<%= opinions.user.username %></small>
+            <image class="profile-picture4"<%= image_tag display_photo(opinion.user) %>
+            <%= opinion.user.fullname %>
+            <small>@<%= opinion.user.username %></small>
             <small class="text-right"> | 
-            <%= opinions.created_at.strftime("#{opinions.created_at.day.ordinalize} %b %Y") %>
+            <%= opinion.created_at.strftime("#{opinion.created_at.day.ordinalize} %b %Y") %>
             </small>
-          <li class="panel-body"><%= opinions.body %></li>
-            <% if user_signed_in? && current_user.id == opinions.user_id %>
+          <li class="panel-body"><%= opinion.body %></li>
+            <% if user_signed_in? && current_user.id == opinion.user_id %>
               <li class="panel-footer text-right h6">
-                <%= link_to edit_opinion_path(opinions) do %>
+                <%= link_to edit_opinion_path(opinion) do %>
                 <i class="fa fa-edit"></i>
                 <% end %>
-                <%= link_to opinions, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <%= link_to opinion, method: :delete, data: { confirm: 'Are you sure?' } do %>
                 <i class="fa fa-trash"></i>
                 <% end %>
               </li>
