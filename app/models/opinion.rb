@@ -1,5 +1,5 @@
 class Opinion < ApplicationRecord
-  validates :content, presence: true, length: { maximum: 140,
+  validates :body, presence: true, length: { maximum: 140,
     too_long: '140 characters in comment is the maximum allowed.' }
   
   belongs_to :user
