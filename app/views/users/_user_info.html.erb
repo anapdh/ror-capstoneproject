@@ -21,3 +21,12 @@
     <% end %>
   <br>
 </section>
+
+<% if @user.followers.exists? %>
+  <h5>Followed by:</h5>
+    <ul>
+      <% @user.followers.each do |f| %>
+        <li>@<%= f.username %> </li>
+      <% end %>
+    </ul>
+<% end %>
