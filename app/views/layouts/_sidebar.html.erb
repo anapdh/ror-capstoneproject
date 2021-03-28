@@ -4,13 +4,13 @@
       <% if user_signed_in? %>
         <div class="d-flex">
           <image class="profile-picture" <%= image_tag display_photo %>
-          <div class="d-flex flex-column align-items-center mx-auto">
-          <h3 class="text-center h4"><%= current_user.fullname %></h3>
-          <h3 class="text-center h4">@<%= current_user.username %></h3>
+          <div class="d-flex flex-column align-items-center mx-3">
+          <span class="text-center h4"><%= current_user.fullname %></span>
+          <span class="text-center h4">@<%= current_user.username %></span>
         </div>
     </div>
 
-    <div class="nav-panel">
+    <div class="nav-panel mb-2">
       <div class="d-flex justify-content-evenly">
         <span class="text-center h5"><%= current_user.opinions.count %><br> Opinions </span>
         <span class="text-center h5"><%= current_user.followees.count %><br> Following </span>
@@ -25,9 +25,9 @@
     <% end %>
       <%= link_to 'Account Settings', edit_user_registration_path %>
     <% end %>
-    </div><br><br>
+    </div>
 
-    <div class="explore">
+    <div class="explore mt-5">
       <h4>EXPLORE<h4>
       <ul class="list-unstyled">
         <li><%= link_to 'Opinons', root_path %></li>
@@ -36,10 +36,10 @@
     </div><br>
 
     <div class="ocult">
-      <ul class="list-unstyled flex column flex-end">
+      <ul class="list-unstyled">
         <% if user_signed_in? %>
-          <li class="nav-link"><%= link_to 'New Opinion', new_opinion_path %></li>
-          <li class="nav-link">
+          <li><%= link_to 'New Opinion', new_opinion_path %></li>
+          <li>
           <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></li>       
         <% end %>
       </ul>
