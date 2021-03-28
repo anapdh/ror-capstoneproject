@@ -1,39 +1,42 @@
 <div class="container-fluid d-flex flex-column h-100">
 
-
-    <div class="profile">
+    <div class="profile d-flex flex-column">
       <% if user_signed_in? %>
+        <div class="d-flex">
+          <image class="profile-picture" <%= image_tag display_photo %>
+          <div class="d-flex flex-column align-items-center mx-auto">
+          <h3 class="text-center h4"><%= current_user.fullname %></h3>
+          <h3 class="text-center h4">@<%= current_user.username %></h3>
+        </div>
+    </div>
 
-          <div>
-            <image class="profile-picture"<%= image_tag display_photo %>
-          </div>
+    <div class="nav-panel">
+      <div class="d-flex justify-content-evenly">
+        <span class="text-center h5"><%= current_user.opinions.count %><br> Opinions </span>
+        <span class="text-center h5"><%= current_user.followees.count %><br> Following </span>
+        <span class="text-center h5"><%= current_user.followers.count %><br> Followers </span>
+      </div>
+    </div>
 
-          <%= link_to users_show_path(current_user) do | user | %>
-            <h3>Profile</h3>
-            <strong>@<%= current_user.username %><br/></strong>
-            <%= current_user.email %><br/><br>
-          <% end %>
-          <%= link_to 'Account Settings', edit_user_registration_path %>
-        <% end %>
+    <%= link_to users_show_path(current_user) do | user | %>
+      <h3>Profile</h3>
+      <strong>@<%= current_user.username %><br/></strong>
+      <%= current_user.email %><br/><br>
+    <% end %>
+      <%= link_to 'Account Settings', edit_user_registration_path %>
+    <% end %>
     </div><br><br>
 
-    
-
+    <div class="explore">
       <h4>EXPLORE<h4>
-
-      <div class="explore">
-      <ul class="list-unstyled components">
-        <li>
-        <%= link_to 'Opinons', root_path %>
-        </li>
-        <li>
-          <%= link_to 'All Users', users_path %>
-        </li>
+      <ul class="list-unstyled">
+        <li><%= link_to 'Opinons', root_path %></li>
+        <li><%= link_to 'All Users', users_path %></li>
       </ul>
-      </div><br>
+    </div><br>
 
-      <div class="ocult">
-      <ul class="list-unstyled components">
+    <div class="ocult">
+      <ul class="list-unstyled flex column flex-end">
         <% if user_signed_in? %>
           <li class="nav-link"><%= link_to 'New Opinion', new_opinion_path %></li>
           <li class="nav-link">
@@ -41,5 +44,4 @@
         <% end %>
       </ul>
     </div>
-
 </div>

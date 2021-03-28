@@ -1,20 +1,25 @@
-<div class="">
-  <image class="profile-picture"<%= image_tag display_photo %>
+<div class="d-flex">
+  <image class="profile-picture2"<%= image_tag display_photo %>
+  <div class="d-flex flex-column justify-content-center">
+    <h3 class="text-center h4"><%= @user.fullname %></h3>
+    <h3 class="text-center h4">@<%= @user.username %></h3>
+  </div>
 </div>
 
-<div>
-  <span> Following <%= @user.followees.count %></span>
-  <span> Followers <%= @user.followers.count %></span>
+<div class="nav-panel">
+  <div class="d-flex justify-content-between">
+    <span class="text-center h5"><%= @user.opinions.count %><br> Opinions </span>
+    <span class="text-center h5"><%= @user.followees.count %><br> Following </span>
+    <span class="text-center h5"><%= @user.followers.count %><br> Followers </span>
+  </div>
 </div>
 
-<section id="all-links">
+<section class="d-flex justify-content-center">
   <% if @user.id == current_user.id %>
     <% elsif current_user.followees.include?(@user) %>
-      <h5><%= button_to "Unfollow", unfollow_path, method: "POST" %></h5>
+      <h5 class="btn"><%= button_to "Unfollow", unfollow_path, method: "POST" %></h5>
     <% else %>
-      <h5><%= button_to "Follow", follow_path, method: "POST"  %></h5>
-    <% end%>
-    <%# <%= link_to 'Followers', user_followers_path(@user) %>
-    <%# <%= link_to 'Following', user_followees_path(@user) %>
+      <h5 class="btn"><%= button_to "Follow", follow_path, method: "POST"  %></h5>
+    <% end %>
   <br>
 </section>

@@ -16,9 +16,14 @@
             </small>
           <li class="panel-body"><%= opinions.body %></li>
             <% if user_signed_in? && current_user.id == opinions.user_id %>
-              <li class="panel-footer text-right h6"><%= link_to 'Show', opinions %>
-                <%= link_to 'Edit', edit_opinion_path(opinions) %>
-                <%= link_to 'Delete', opinions, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              <li class="panel-footer text-right h6">
+                <%= link_to edit_opinion_path(opinions) do %>
+                <i class="fa fa-edit"></i>
+                <% end %>
+                <%= link_to opinions, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fa fa-trash"></i>
+                <% end %>
+              </li>
             <% end %>
         </div>
       <% end %>
