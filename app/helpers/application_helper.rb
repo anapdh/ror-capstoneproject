@@ -16,7 +16,7 @@ module ApplicationHelper
   end
 
   def display_cover(user = nil)
-    if user.nil? || user.photo.nil?
+    if user.nil? || user.coverimage.nil?
       'default-cover-img.jpg'
     else user.coverimage.attached?
       user.coverimage
