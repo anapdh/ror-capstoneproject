@@ -1,5 +1,5 @@
 <div class="d-flex flex-column align-items-center">
-  <image class="profile-picture2"<%= image_tag display_photo %>
+  <image class="profile-picture2"<%= image_tag display_photo(@user) %>
     <h3 class="text-center h4"><%= @user.fullname %></h3>
     <h3 class="text-center h4">@<%= @user.username %></h3>
 </div>

@@ -2,12 +2,12 @@
 
 
 <% User.all.order(created_at: :desc).each do |user| %>
-  <div class="d-flex">
+  <div class="d-flex align-items-baseline">
     <div>
       <%= link_to users_show_path(user.id) do %>
-      <image class="profile-picture3"<%= image_tag display_photo %>
+      <image class="profile-picture3"<%= image_tag display_photo(user) %>
     </div>
-    <div>
+    <div class="px-2">
       <%= user.fullname %><br/>
       <small>@<%= user.username %></small><br/><br>
     <% end %>

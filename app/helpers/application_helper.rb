@@ -7,8 +7,8 @@ module ApplicationHelper
     end
   end
 
-  def display_photo(user = nil)
-    if user.nil? || user.photo.nil?
+  def display_photo(user)
+    if user.nil? || !user.photo.attached?
       'default-profile-img.png'
     else user.photo.attached?
       user.photo
