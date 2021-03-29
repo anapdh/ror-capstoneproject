@@ -1,21 +1,21 @@
-require "test_helper"
+require 'test_helper'
 
 class OpinionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @opinion = opinions(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get opinions_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_opinion_url
     assert_response :success
   end
 
-  test "should create opinion" do
+  test 'should create opinion' do
     assert_difference('Opinion.count') do
       post opinions_url, params: { opinion: { body: @opinion.body } }
     end
@@ -23,22 +23,22 @@ class OpinionsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to opinion_url(Opinion.last)
   end
 
-  test "should show opinion" do
+  test 'should show opinion' do
     get opinion_url(@opinion)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_opinion_url(@opinion)
     assert_response :success
   end
 
-  test "should update opinion" do
+  test 'should update opinion' do
     patch opinion_url(@opinion), params: { opinion: { body: @opinion.body } }
     assert_redirected_to opinion_url(@opinion)
   end
 
-  test "should destroy opinion" do
+  test 'should destroy opinion' do
     assert_difference('Opinion.count', -1) do
       delete opinion_url(@opinion)
     end

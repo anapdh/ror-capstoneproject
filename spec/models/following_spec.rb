@@ -9,5 +9,5 @@ RSpec.describe Following, type: :model do
   describe 'Validations' do
     it { should validate_uniqueness_of(:follower_id).scoped_to(:followee_id) }
     it { should validate_uniqueness_of(:followee_id).scoped_to(:follower_id) }
-    end
   end
+end
