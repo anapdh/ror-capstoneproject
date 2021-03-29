@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "opinions#index"
+  match '/opinions/new', to: 'opinions#index', via: 'get'
 
   devise_for :users, :controllers => { registrations: 'registrations', users: 'users'}
   match '/users', to: 'users#index', via: 'get'
