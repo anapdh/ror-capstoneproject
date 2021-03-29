@@ -24,9 +24,9 @@ Features on this project:
     1. User photo.
     2. Button to follow a user.
     3. Stats: total number of tweets, number of followers and number of following users.
-    4. List of people who follow this user (only if there are any follower).
+    4. List of people who follow this user (only if there are any followers).
 7. *Additional feature*:
-    Users can upload a profile picture and cover image from its own pc, when signing up OR when editing account. When not uploading in Sugn Up, a Defalut profile picture and cover image will show up.
+    Users can upload a profile picture and cover image from its own pc, when signing up OR when editing the account. When not uploading in Sign Up, a Default profile picture and cover image will show up (still needs improvments with a s3 server since Heroku discarts images when refreshing Dinos).
 ## Built With
 
 - Ruby v2.7.0
@@ -35,7 +35,7 @@ Features on this project:
 
 ## Live Demo
 
-[TweetHub](https://tweethub-2021.herokuapp.com/)
+[TweetHub](https://murmuring-forest-99662.herokuapp.com/)
 
 
 ## Getting Started
