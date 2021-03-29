@@ -1,10 +1,11 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/RoR-red)
 
 > This is the final project for Ruby on Rails Microverse's Module: a Twitter Clone.
+> 
 # TweetHub
 Features on this project:
 
-1. After creatin an account, the user can log in to the app only by typing the username and password.
+1. After creating an account, a user can log in to the app only by typing the username and password.
 2. The user is presented with the homepage that includes:
     1. Left-side menu with current user information and main navigation.
     2. All *Tweets/Opinions* in the centre od the scree, as the main content.
@@ -34,7 +35,7 @@ Features on this project:
 
 ## Live Demo
 
-[TweetHub]()
+[TweetHub](https://tweethub-2021.herokuapp.com/)
 
 
 ## Getting Started
