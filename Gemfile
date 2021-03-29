@@ -32,6 +32,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'world-flags', github: 'kristianmandrup/world-flags', branch: 'master'
 gem 'image_processing'
+gem "bullet"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -12,7 +12,6 @@ class User < ApplicationRecord
   validates :username, presence: true, length: { maximum: 20 }
   validates :fullname, presence: true
   validates :email, presence: true
-  validates :password, presence: true
 
   has_many :opinions
   has_many :followers
