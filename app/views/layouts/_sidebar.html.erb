@@ -3,7 +3,7 @@
     <div class="profile d-flex flex-column">
       <% if user_signed_in? %>
         <div class="d-flex">
-          <image class="profile-picture2"<%= image_tag display_photo(current_user) %>
+          <image class="profile-picture"<%= image_tag display_photo(current_user) %>
           <div class="d-flex flex-column align-items-center mx-3">
           <span class="text-center h4"><%= current_user.fullname %></span>
           <span class="text-center h4">@<%= current_user.username %></span>
