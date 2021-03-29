@@ -1,14 +1,14 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/RoR-red)
 
 > This is the final project for Ruby on Rails Microverse's Module: a Twitter Clone.
-> 
+
 # TweetHub
 Features on this project:
 
 1. After creating an account, a user can log in to the app only by typing the username and password.
 2. The user is presented with the homepage that includes:
     1. Left-side menu with current user information and main navigation.
-    2. All *Tweets/Opinions* in the centre od the scree, as the main content.
+    2. All *Tweets/Opinions* in the center of the screen, as the main content.
     3. Right-side section with *Who to follow*.
     4. More information about a user when clicking on its profile.
 3. The *Tweets* section includes:
@@ -18,7 +18,7 @@ Features on this project:
     1. List of profiles that are not followed by the logged-in user (ordered by most recently added).
 5. When the user opens the profile page, they can see:
     1. Left-side menu.
-    2. Cover picture and *Tweets* tab in the centre.
+    2. Cover picture and *Tweets* tab in the center.
     3. Right-side section with *Profile detailed info.*
 6. The *Profile detailed info* section includes:
     1. User photo.
@@ -26,7 +26,8 @@ Features on this project:
     3. Stats: total number of tweets, number of followers and number of following users.
     4. List of people who follow this user (only if there are any followers).
 7. *Additional feature*:
-    Users can upload a profile picture and cover image from its own pc, when signing up OR when editing the account. When not uploading in Sign Up, a Default profile picture and cover image will show up (still needs improvments with a s3 server since Heroku discarts images when refreshing Dinos).
+    Users can upload a profile picture and cover image from their computer when signing up or when editing the account. When not uploading in Sign Up, a default profile picture and cover image will show up (the feature still needs improvements with an s3 server since Heroku discards images when refreshing Dinos).
+    
 ## Built With
 
 - Ruby v2.7.0
