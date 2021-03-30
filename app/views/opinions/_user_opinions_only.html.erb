@@ -1,0 +1,10 @@
+# Only the opinion's creator can delete or edit it.
+
+<li class="panel-footer text-right h6">
+  <%= link_to edit_opinion_path(opinion) do %>
+    <i class="fa fa-edit"></i>
+  <% end %>
+  <%= link_to opinion, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <i class="fa fa-trash"></i>
+  <% end %>
+</li>
