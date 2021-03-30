@@ -34,14 +34,32 @@ module ApplicationHelper
   def display_functional_navigation(user)
     out = ''
     out +=
+      if user_signed_in?
+        out += "<li class='nav-link'>#{link_to(current_user.username, users_show_path(current_user))}</li>"
+        out += "<li class='nav-link'>#{link_to('New Opinion', new_opinion_path)}</li>"
+        out += "<li class='nav-link'>#{link_to('Logout', destroy_user_session_path, :method=>'delete')}</li>"
+        # out+= "<li class='nav-link'>#{link_to(edit_user_registration_path) '<i class="fa fa-cog">'}</li>"
+      else
+        out += "<li class='nav-link'>#{link_to('Login', new_user_session_path)}</li>"
+        out += "<li class='nav-link'>#{link_to('Sign up', new_user_registration_path)}</li>"
+      end
+    out.html_safe
+  end
+
+  def display_user_sidebar
+    out = ""
+    out+= "<h3>#{link_to('Profile', users_show_path(current_user))}</h3>"
+      out += "<strong>@#{current_user.username}<br/></strong>"
+      out += "#{current_user.email}<br/><br>"
+    out += "#{link_to('Account Settings', edit_user_registration_path)}"
+    out.html_safe
+  end
+
+  def display_ocult_sidebar
+    out = ""
     if user_signed_in?
-    out += "<li class='nav-link'>#{link_to(current_user.username, users_show_path(current_user))}</li>"
-    out += "<li class='nav-link'>#{link_to('New Opinion', new_opinion_path)}</li>"
-    out += "<li class='nav-link'>#{link_to('Logout', destroy_user_session_path, :method=>'delete')}</li>"
-    # out+= "<li class='nav-link'>#{link_to(edit_user_registration_path) '<i class="fa fa-cog">'}</li>"
-    else
-    out += "<li class='nav-link'>#{link_to('Login', new_user_session_path)}</li>"
-    out += "<li class='nav-link'>#{link_to('Sign up', new_user_registration_path)}</li>"
+      out += "<li>#{link_to('New Opinion', new_opinion_path)}</li>"
+      out += "<li>#{link_to('Logout', destroy_user_session_path, :method=>'delete')}</li>"     
     end
     out.html_safe
   end
