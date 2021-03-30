@@ -1,9 +1,15 @@
 module ApplicationHelper
   def define_page(user = nil)
-    if user&.id
-      render 'users/user_info'
-    else
-      render 'users/who_to_follow'
+    if user_signed_in?
+    out = ''
+    out += '<div class="col-xs-3"><div class="panel panel-default"><div class="panel-body">'
+      if user&.id
+        out += render "users/user_info"
+      else
+        out += render 'users/who_to_follow'
+      end
+    out += '</div></div></div>'
+    out.html_safe
     end
   end
 
