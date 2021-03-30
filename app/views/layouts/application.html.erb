@@ -15,12 +15,14 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <body>
 
   <%= render 'layouts/navigation' %>
+
+    <div class="all-messages">
+      <span class="notice"><%= notice %></span>
+      <span class="alert"><%= alert %></span>
+    </div>
 
   <div class="content row">
 
@@ -33,7 +35,6 @@
         </div>
 
         <div class="col-xs-8">
-          <%= render 'layouts/messages'%>
             <div class="panel panel-default">
               <div class="panel-body">
                 <%= yield %>
