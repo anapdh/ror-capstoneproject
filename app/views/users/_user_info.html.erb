@@ -13,12 +13,7 @@
 </div>
 
 <section class="d-flex justify-content-center">
-  <% if @user.id == current_user.id %>
-    <% elsif current_user.followees.include?(@user) %>
-      <h5 class="btn"><%= button_to "Unfollow", unfollow_path, method: "POST" %></h5>
-    <% else %>
-      <h5 class="btn"><%= button_to "Follow", follow_path, method: "POST"  %></h5>
-    <% end %>
+  <%= display_followers(@user) %>
   <br>
 </section>
 
