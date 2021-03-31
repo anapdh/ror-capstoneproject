@@ -32,7 +32,8 @@ Features on this project:
     - List of people who follow this user (only if there are any followers).
 
 7. *Additional feature*:
-    - Users can upload a profile picture and cover image from their computer when signing up or when editing the account. When not uploading in Sign Up, a default profile picture and cover image will show up (the feature still needs improvements with an s3 server since Heroku discards images when refreshing Dinos).
+    - Users can upload a profile picture and cover image from their computer when signing up or when editing the account. When not uploading in Sign Up, a default profile picture and cover image will show up.
+    - Users can like and dislike opinions.
     
 ## Built With
 
@@ -43,7 +44,7 @@ Features on this project:
 
 ## Live Demo
 
-[TweetHub](https://murmuring-forest-99662.herokuapp.com/)
+[TweetHub](https://tweethub2021.herokuapp.com/)
 
 
 ## Getting Started
