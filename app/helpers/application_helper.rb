@@ -37,7 +37,7 @@ module ApplicationHelper
       if user_signed_in?
         out += "<li class='nav-link'>#{link_to(current_user.username, users_show_path(current_user))}</li>"
         out += "<li class='nav-link'>#{link_to('New Opinion', new_opinion_path)}</li>"
-        out += "<li class='nav-link'>#{link_to('Logout', destroy_user_session_path, :method=>'delete')}</li>"
+        out += "<li class='nav-link'>#{link_to('Logout', destroy_user_session_path, :method=>'delete', id:'logout_btn')}</li>"
         # out+= "<li class='nav-link'>#{link_to(edit_user_registration_path) '<i class="fa fa-cog">'}</li>"
       else
         out += "<li class='nav-link'>#{link_to('Login', new_user_session_path)}</li>"
