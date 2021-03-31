@@ -33,6 +33,7 @@ Features on this project:
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
 - Devise
+- Git & GitHub
 
 ## Live Demo
 
@@ -41,46 +42,30 @@ Features on this project:
 
 ## Getting Started
 
-To get a local copy and run the this repository follow these simple example steps:
-
-1. Download/clone this repository [GitHub Repository](https://github.com/anapdh/ror-capstoneproject) on your computer.
-2. In your terminal, use the command `cd` to go to the place where you saved/cloned the repository. For example: _Desktop/User/ror-capstoneproject/_. You may use the command `ls` to see the files and repositories existent in your current location.
-
 ### Prerequisites
 
 Ruby: 2.7.2
 Rails: 6.1.3
 Postgres
 
-### Setup
+To get a local copy and run the this repository follow these simple example steps:
 
-Install gems with:
+1. Open your terminal and go to the directory where you want to clone the repository.
 
-```
-bundle install
-```
+2. Download/clone this repository [GitHub Repository](https://github.com/anapdh/ror-capstoneproject) on your computer: Type `$ git clone https://github.com/anapdh/ror-capstoneproject`.
+(In case you need more help, check out this link [Cloning a GitHub Repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
 
-Setup database with:
+3. Still in your terminal, use the command `cd` to go to the place where you saved/cloned the repository. For example: _Desktop/User/ror-capstoneproject/_. You may use the command `ls` to see the files and repositories existent in your current location.
 
-```
-   rails db:create
-   rails db:migrate
-```
+4. Install the necessary gems to run the project. Type `$ bundle install && yarn install`
 
-### Usage
+5. Now, please run these commands `rails db:create` and `rails db:migrate` to run all the migration for the database and have all tables updated and read to use
 
-Start the server with:
-
-```
-    rails server
-```
-
-Open `http://localhost:3000/` in your browser.
-
+Now your environment is ready to run the project. Type `rails s`, open your browser and paste `localhost:3000`
 ### Run tests
-
+To run all the testes, typo on your terminal the command:
 ```
-    rpsec --format documentation
+    rpsec
 ```
 ## Author
 
