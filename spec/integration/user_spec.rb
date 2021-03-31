@@ -4,21 +4,21 @@ require 'capybara/rails'
 RSpec.describe 'Sign Up', type: :model do
   scenario 'Sign up with valid inputs' do
     visit '/users/sign_up'
-    fill_in 'Fullname', with: 'Foo Bar'
-    fill_in 'Username', with: 'foo'
-    fill_in 'Email', with: 'foo@bar.com'
+    fill_in 'Fullname', with: 'Tester3'
+    fill_in 'Username', with: 'tester3'
+    fill_in 'Email', with: 'tester3@test.com'
     fill_in 'Password', with: '12345678'
     fill_in 'Password confirmation', with: '12345678'
     click_on 'signup_btn'
     sleep(2)
-    expect(page).to have_content('Foo Bar')
+    expect(page).to have_content('Tester3')
   end
 
   scenario 'Sign up with invalid inputs' do
     visit 'users/sign_up'
-    fill_in 'Fullname', with: 'Foo Bar'
-    fill_in 'Username', with: 'foo'
-    fill_in 'Email', with: 'foo@bar.com'
+    fill_in 'Fullname', with: 'Tester3'
+    fill_in 'Username', with: 'tester3'
+    fill_in 'Email', with: 'tester3..'
     fill_in 'Password', with: '12345678'
     fill_in 'Password confirmation', with: '12345678'
     click_on 'signup_btn'
