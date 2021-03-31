@@ -14,7 +14,7 @@ RSpec.describe 'Create Opinion', type: :feature do
     visit '/opinions/new'
     fill_in 'opiniontext', with: 'Hello World!'
     click_on 'Create Opinion'
-    sleep(3)
+    sleep(2)
     expect(page).to have_content('Hello World!')
   end
 
@@ -26,7 +26,7 @@ RSpec.describe 'Create Opinion', type: :feature do
     visit '/opinions/new'
     fill_in 'opiniontext', with: ''
     click_on 'Create Opinion'
-    sleep(3)
+    sleep(2)
     expect(page).to have_selector('.alert')
   end
 end

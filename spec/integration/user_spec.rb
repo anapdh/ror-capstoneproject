@@ -10,7 +10,7 @@ RSpec.describe 'Sign Up', type: :model do
     fill_in 'Password', with: '12345678'
     fill_in 'Password confirmation', with: '12345678'
     click_on 'signup_btn'
-    sleep(3)
+    sleep(2)
     expect(page).to have_content('Foo Bar')
   end
 
@@ -22,7 +22,7 @@ RSpec.describe 'Sign Up', type: :model do
     fill_in 'Password', with: '12345678'
     fill_in 'Password confirmation', with: '12345678'
     click_on 'signup_btn'
-    sleep(3)
+    sleep(2)
     expect(page).to_not have_content('Foo Bar')
   end
 end
@@ -34,7 +34,7 @@ RSpec.describe 'Log In', type: :feature do
     fill_in 'user_login', with: user.username
     fill_in 'user_password', with: user.password
     click_on 'Log in'
-    sleep(3)
+    sleep(2)
     expect(page).to have_content('Foo Bar')
   end
 
@@ -43,7 +43,7 @@ RSpec.describe 'Log In', type: :feature do
     fill_in 'user_login', with: 'Banana'
     fill_in 'user_password', with: user.password
     click_on 'Log in'
-    sleep(3)
+    sleep(2)
     expect(page).to_not have_content('Foo Bar')
   end
 end
@@ -55,9 +55,9 @@ RSpec.describe 'Log Out', type: :feature do
     fill_in 'user_login', with: user.email
     fill_in 'user_password', with: user.password
     click_on 'Log in'
-    sleep(3)
+    sleep(2)
     click_on 'logout_btn'
-    sleep(3)
+    sleep(2)
     visit root_path
     expect(page).to have_content('You need to sign in or sign up before continuing.')
   end
