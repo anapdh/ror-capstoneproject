@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'capybara/rails'
 
-RSpec.describe User, type: :model do
+RSpec.describe 'Sign Up', type: :model do
   scenario 'Sign up with valid inputs' do
     visit '/users/sign_up'
     fill_in 'Fullname', with: 'Foo Bar'
