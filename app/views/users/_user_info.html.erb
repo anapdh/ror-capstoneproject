@@ -13,15 +13,8 @@
 </div>
 
 <section class="d-flex justify-content-center">
-  <%= display_followers(@user) %>
+  <%= display_follow_btn(@user) %>
   <br>
 </section>
 
-<% if @user.followers.exists? %>
-  <h5>Followed by:</h5>
-    <ul>
-      <% @user.followers.each do |f| %>
-        <li>@<%= f.username %> </li>
-      <% end %>
-    </ul>
-<% end %>
+<%= display_followers(@user) %>
