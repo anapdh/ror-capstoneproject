@@ -16,6 +16,9 @@
             <%= opinion.created_at.strftime("#{opinion.created_at.day.ordinalize} %b %Y") %>
             </small>
             <li class="panel-body"><%= opinion.body %></li>
+              <div class='post-liking'>
+                <%= like_or_dislike_btn(opinion, @like) %>
+              </div>
             <%= user_owner?(opinion) %>
         </div>
       <% end %>

@@ -1,0 +1,4 @@
+<%= form_with model: like do | form | %>
+  <%= form.hidden_field :opinion_id, value: opinion.id %>
+  <%= form.submit "Like!" %>
+<% end %>

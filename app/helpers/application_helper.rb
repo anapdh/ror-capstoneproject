@@ -63,4 +63,13 @@ module ApplicationHelper
     end
     out.html_safe
   end
+
+  def like_or_dislike_btn(opinion, like)
+    like2 = current_user.liked(opinion, current_user)
+    if like2
+      render 'dislike_btn', like: like2
+    else
+      render 'like_btn', opinion: opinion, like: like
+    end
+  end
 end

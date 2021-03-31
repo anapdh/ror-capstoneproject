@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   match '/users/:id', to: 'users#show', via: 'get', :as => :users_show
   match '/users/:id/follow', to: 'users#follow', via: 'post', :as => :follow
   match '/users/:id/unfollow', to: 'users#unfollow', via: 'post', :as => :unfollow
-  
+
   resources :opinions
+  resources :likes, only: [:create, :destroy]
 end

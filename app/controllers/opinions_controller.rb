@@ -4,19 +4,11 @@ class OpinionsController < ApplicationController
 
   # GET /opinions or /opinions.json
   def index
-    @opinions = Opinion.all.order(created_at: :desc)
+    @opinions = Opinion.all.includes(:user).order(created_at: :desc)
     @opinion = Opinion.new
     @users = User.all
+    @like = Like.new
   end
-
-  # GET /opinions/1 or /opinions/1.json
-  def show; end
-
-  # GET /opinions/new
-  def new; end
-
-  # GET /opinions/1/edit
-  def edit; end
 
   # POST /opinions or /opinions.json
   def create

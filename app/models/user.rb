@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   has_many :opinions
   has_many :followers
+  has_many :likes, dependent: :destroy
   has_one_attached :photo
   has_one_attached :coverimage
 
@@ -30,5 +31,9 @@ class User < ApplicationRecord
       ['lower(username) = :value OR lower(email) = :value',
        { value: login.strip.downcase }]
     ).first
+  end
+
+  def liked(opinion, user)
+    Like.find_by(opinion: opinion, user: user)
   end
 end
