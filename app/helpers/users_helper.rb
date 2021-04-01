@@ -1,12 +1,13 @@
 module UsersHelper
   def display_follow_btn(_user)
     out = ''
-    if @user.id == current_user.id
-    elsif current_user.followees.include?(@user)
-      out += "<h5 class='btn'> #{button_to 'Unfollow', unfollow_path, method: 'POST'} </h5>"
-    else
-      out += "<h5 class='btn'>#{button_to 'Follow', follow_path, method: 'POST'}</h5>"
-    end
+    return unless @user.id != current_user.id
+
+    out += if current_user.followees.include?(@user)
+             "<h5 class='btn'> #{button_to 'Unfollow', unfollow_path, method: 'POST'} </h5>"
+           else
+             "<h5 class='btn'>#{button_to 'Follow', follow_path, method: 'POST'}</h5>"
+           end
     out.html_safe
   end
 

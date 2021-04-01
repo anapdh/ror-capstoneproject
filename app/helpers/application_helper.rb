@@ -1,16 +1,16 @@
 module ApplicationHelper
   def define_page(user = nil)
-    if user_signed_in?
-      out = ''
-      out += '<div class="col-xs-3"><div class="panel panel-default"><div class="panel-body">'
-      out += if user&.id
-               render 'users/user_info'
-             else
-               render 'users/who_to_follow'
-             end
-      out += '</div></div></div>'
-      out.html_safe
-    end
+    return unless user_signed_in?
+
+    out = ''
+    out += '<div class="col-xs-3"><div class="panel panel-default"><div class="panel-body">'
+    out += if user&.id
+             render 'users/user_info'
+           else
+             render 'users/who_to_follow'
+           end
+    out += '</div></div></div>'
+    out.html_safe
   end
 
   def display_photo(user = nil)
@@ -35,13 +35,12 @@ module ApplicationHelper
     out = ''
     out +=
       if user_signed_in?
-        out += "<li class='nav-link'>#{link_to(current_user.username, users_show_path(current_user))}</li>"
-        out += "<li class='nav-link'>#{link_to('New Opinion', new_opinion_path)}</li>"
-        out += "<li class='nav-link'>#{link_to('Logout', destroy_user_session_path, method: 'delete',
-                                                                                    id: 'logout_btn')}</li>"
+        "<li class='nav-link'>#{link_to(current_user.username, users_show_path(current_user))}</li>
+        <li class='nav-link'>#{link_to('New Opinion', new_opinion_path)}</li>
+        <li class='nav-link'>#{link_to('Logout', destroy_user_session_path, method: 'delete', id: 'logout_btn')}</li>"
       else
-        out += "<li class='nav-link'>#{link_to('Login', new_user_session_path)}</li>"
-        out += "<li class='nav-link'>#{link_to('Sign up', new_user_registration_path)}</li>"
+        "<li class='nav-link'>#{link_to('Login', new_user_session_path)}</li>
+        <li class='nav-link'>#{link_to('Sign up', new_user_registration_path)}</li>"
       end
     out.html_safe
   end
