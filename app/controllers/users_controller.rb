@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.all.order(created_at: :desc)
     @user = User.new
     @user.photo.attach(params[:photo])
   end
 
   def show
+    @users = User.all.order(created_at: :desc)
     @user = User.find(params[:id])
     @user_opinions = @user.opinions.ordered_by_most_recent
   end

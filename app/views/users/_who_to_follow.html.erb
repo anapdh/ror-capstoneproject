@@ -1,6 +1,6 @@
 <h3>Who to Follow</h3><br>
 
-<% User.all.each do |user| %>
+<% @users.each do |user| %>
   <div class="d-flex align-items-baseline">
     <div>
       <%= link_to users_show_path(user.id) do %>

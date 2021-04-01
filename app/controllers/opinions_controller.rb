@@ -6,7 +6,7 @@ class OpinionsController < ApplicationController
   def index
     @opinions = Opinion.all.includes(:user).order(created_at: :desc)
     @opinion = Opinion.new
-    @users = User.all
+    @users = User.all.order(created_at: :desc)
     @like = Like.new
   end
 
