@@ -57,7 +57,7 @@ Features on this project:
 
 ### Setup
 
-To get a local copy and run the this repository, follow these simple example steps:
+To get a local copy and run this repository, follow these simple example steps:
 
 1. Open your terminal and go to the directory where you want to clone the repository.
 

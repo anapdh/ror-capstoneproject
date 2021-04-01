@@ -29,12 +29,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap-sass'
 gem 'bullet'
+gem 'cloudinary'
 gem 'devise'
+gem 'figaro'
 gem 'font-awesome-rails'
 gem 'image_processing'
 gem 'world-flags', github: 'kristianmandrup/world-flags', branch: 'master'
-gem 'cloudinary'
-gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
