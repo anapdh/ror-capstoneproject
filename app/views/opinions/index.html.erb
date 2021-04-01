@@ -1,0 +1,23 @@
+<h1>Opinions</h1><br>
+
+  <%= display_form %>
+
+    <ul class="list-unstyled">
+      <% @opinions.each do | opinion | %>
+        <div class="panel panel-default">
+          <li class="panel-heading">
+            <image class="profile-picture4"<%= image_tag display_photo(opinion.user) %>
+            <%= opinion.user.fullname %>
+            <small>@<%= opinion.user.username %></small>
+            <small class="text-right"> | 
+            <%= opinion.created_at.strftime("#{opinion.created_at.day.ordinalize} %b %Y") %>
+            </small>
+            <li class="panel-body"><%= opinion.body %></li>
+              <div class='post-liking text-right mx-2'>
+                <%= like_or_dislike_btn(opinion, @like) %>
+              </div>
+            <%= user_owner?(opinion) %>
+          </li>
+        </div>
+      <% end %>
+    </ul>

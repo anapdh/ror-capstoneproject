@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div>
+      <image class="cover-image"<%= image_tag display_cover(@user) %>
+    </div>
+
+    <h3>See <u>@<%= @user.username %></u> thoughts:</h3><br>
+
+  <ul>
+    <% @user_opinions.each do | opinion | %>
+      <li><%= opinion.body %> <br> 
+      <small>Tweeted at <%= opinion.created_at %></small></li><br>
+    <% end %>
+  </ul>
+  </div>
+</div>

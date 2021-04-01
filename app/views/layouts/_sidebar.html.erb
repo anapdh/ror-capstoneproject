@@ -1,0 +1,39 @@
+<div class="container-fluid d-flex flex-column h-100">
+
+    <div class="profile d-flex flex-column">
+      <% if user_signed_in? %>
+        <div class="d-flex">
+          <image class="profile-picture"<%= image_tag display_photo(current_user) %>
+          <div class="d-flex flex-column align-items-center mx-3">
+          <span class="text-center h4"><%= current_user.fullname %></span>
+          <span class="text-center h4">@<%= current_user.username %></span>
+        </div>
+    </div>
+
+    <div class="nav-panel mb-2">
+      <div class="d-flex justify-content-evenly">
+        <span class="text-center h5"><%= current_user.opinions.count %><br> Opinions </span>
+        <span class="text-center h5"><%= current_user.followees.count %><br> Following </span>
+        <span class="text-center h5"><%= current_user.followers.count %><br> Followers </span>
+      </div>
+    </div>
+
+      <%= display_user_sidebar %>
+      <% end %>
+      
+    </div>
+
+    <div class="explore mt-5">
+      <h4>EXPLORE<h4>
+      <ul class="list-unstyled">
+        <li><%= link_to 'Opinons', root_path %></li>
+        <li><%= link_to 'All Users', users_path %></li>
+      </ul>
+    </div><br>
+
+    <div class="ocult">
+      <ul class="list-unstyled">
+        <%= display_ocult_sidebar %>
+      </ul>
+    </div>
+</div>

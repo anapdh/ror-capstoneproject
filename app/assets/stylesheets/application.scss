@@ -1,0 +1,101 @@
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+
+html,
+body {
+  position: relative;
+  margin: 0;
+  height: 100vh;
+}
+
+.all-messages {
+  padding: 100px 0 0 22%;
+}
+
+.main-nav {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  right: 0;
+}
+
+.logob {
+  position: fixed;
+  top: 0;
+  left: 22%;
+  z-index: 20;
+}
+
+.saved-blue {
+  background-color: #52a6e7;
+  color: #fff;
+}
+
+.profile-picture {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.profile-picture2 {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.profile-picture3 {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.profile-picture4 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.cover-image {
+  width: 100%;
+  max-height: 260px;
+  border-radius: 5px;
+}
+
+.sidebar {
+  z-index: 10;
+  padding-top: 85px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 20%;
+  flex-direction: column;
+  background-color: #213346;
+  color: #fff;
+}
+
+.sidebar a {
+  color: #fff;
+}
+
+.content {
+  padding: 30px 10px 0 0;
+  margin-left: -30px;
+  height: 90%;
+}
