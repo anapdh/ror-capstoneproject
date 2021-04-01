@@ -1,6 +1,6 @@
 module ApplicationHelper
   def define_page(user = nil)
-    return unless user_signed_in?
+    if user_signed_in?
       out = ''
       out += '<div class="col-xs-3"><div class="panel panel-default"><div class="panel-body">'
       out += if user&.id
