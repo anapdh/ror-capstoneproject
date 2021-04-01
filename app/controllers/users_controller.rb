@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.all.order(created_at: :desc)
     @user = User.find(params[:id])
     @user_opinions = @user.opinions.ordered_by_most_recent
   end
