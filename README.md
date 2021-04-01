@@ -35,17 +35,21 @@ Features on this project:
     - Users can upload a profile picture and cover image from their computer when signing up or when editing the account. When not uploading in Sign Up, a default profile picture and cover image will show up.
     - Users can like and dislike opinions.
     
+## Screenshots
+![screenshot](app/assets/images/screenshot1.png)
+---
+![screenshot](app/assets/images/screenshot2.png)
+
+## Live Demo
+
+[TweetHub](https://tweethub2021.herokuapp.com/)
+
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
 - Devise
 - Git & GitHub
-
-## Live Demo
-
-[TweetHub](https://tweethub2021.herokuapp.com/)
-
 
 ## Getting Started
 
