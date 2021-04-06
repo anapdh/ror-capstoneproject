@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/RoR-red) ![](https://img.shields.io/badge/ActiveRecords-blue)
+![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/RoR-red) ![](https://img.shields.io/badge/ActiveRecord-blue)
 
 This is the final project for Ruby on Rails Microverse's Module: a **Twitter Clone**.
 
