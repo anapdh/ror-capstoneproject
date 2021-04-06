@@ -49,6 +49,7 @@ Features on this project:
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
 - Devise
+- ActiveStorage & Clodinary
 - Git & GitHub
 
 ## Getting Started
