@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
                                       keys: %i[fullname username email photo coverimage password_confirmation
                                                current_password])
   end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end

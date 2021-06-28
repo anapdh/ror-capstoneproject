@@ -1,0 +1,3 @@
+meta_title: "TweetHüb"
+meta_description: "A social media app built with the knowledge of Ruby, Ruby on Rails, Postgres, Devise, ActiveStorage and Cloudinary."
+meta_image: "logobanner.png" # should exist in `app/assets/images/`
